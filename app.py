@@ -6,7 +6,7 @@ from web3 import Web3
 app = Flask(__name__)
 
 #set up web3 connection
-infura_url = 'https://mainnet.infura.io/v3/f064d8b0c7d94c27b6178b95852be5b4'
+infura_url = '<YOUR_INFURA_URL>'
 web3 = Web3(Web3.HTTPProvider(infura_url))
 
 # user account
