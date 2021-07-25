@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>yield tracker</title>
+{% endblock %}
+
+{% block body %}
+<h2>yield farm tracker</h2><br>
+{% for farm in farms.values() %}
+<p>{{ farm['name'] }} Pool</p>
+{{ farm['name'] }} Price: ${{ farm['price'] }}<br>
+You are staking: {{ farm['userStaked'] }} {{ farm['name'] }} (${{ farm['userStaked'] * farm['price'] }})<br>
+Unclaimed balance: {{ farm['userUnclaimed'] }} {{ farm['name'] }} (${{ farm['userUnclaimed'] * farm['price'] }})<br>
+APR: Day {{ farm['dailyAPY'] }}% | Week {{ farm['weeklyAPY'] }}% | Year {{ farm['yearlyAPY'] }}%<br>
+Estimated {{ farm['name'] }} earnings: Day {{ farm['dailyEarnings'] }} (${{ farm['dailyEarningsUSD'] }}) | Week {{ farm['weeklyEarnings'] }} (${{ farm['weeklyEarningsUSD'] }}) | Year {{ farm['yearlyEarnings'] }} (${{ farm['yearlyEarningsUSD'] }})<br>
+<br>
+{% endfor %}
+
+{% endblock %}
